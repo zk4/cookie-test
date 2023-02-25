@@ -42,10 +42,10 @@ app.get('/blog.html', (req, res) => {
 app.get('/ad.js', (req, res) => {
   let options = {
     // maxAge: 1000 * 60 * 15, // would expire after 15 minutes
-    // domain: '.ad.zk',
+    domain: 'ad.zk',
     // httpOnly: true, // The cookie only accessible by the web server
     // signed: true // Indicates if the cookie should be signed
-    // sameSite: 'none',
+    sameSite: 'none',
     secure: true,
   }
 

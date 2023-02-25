@@ -8,8 +8,8 @@ ST = VA
 L = Beijing
 O = zk
 OU = zk
-CN = local.zk
+CN = zk
 [v3_req]
 keyUsage = critical, digitalSignature, keyAgreement
 extendedKeyUsage = serverAuth
-subjectAltName = DNS:localhost,DNS:*.local.zk,IP:127.0.0.1
+subjectAltName = DNS:localhost,DNS:blog.local.zk,DNS:ad.zk,IP:127.0.0.1
