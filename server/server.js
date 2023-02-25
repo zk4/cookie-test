@@ -5,6 +5,18 @@ const fs = require('fs');
 const https = require('https');  
 const http = require('http');  
 
+function cookieParser(req, res, next) {
+  var cookies = req.headers.cookie;
+  if (cookies) {
+    req.cookies = cookies.split(";").reduce((obj, c) => {
+      var n = c.split("=");
+      obj[n[0].trim()] = n[1].trim();
+      return obj
+    }, {})
+  }
+  next();
+}
+app.use(cookieParser);
 
 var privateKey  = fs.readFileSync(path.join(__dirname, '../key.pem'), 'utf8');  
 var certificate = fs.readFileSync(path.join(__dirname, '../cert.pem'), 'utf8');  
