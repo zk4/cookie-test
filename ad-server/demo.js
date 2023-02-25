@@ -5,8 +5,10 @@ const fs = require('fs');
 const https = require('https');  
 const http = require('http');  
 
-var privateKey  = fs.readFileSync(path.join(__dirname, './private.pem'), 'utf8');  
-var certificate = fs.readFileSync(path.join(__dirname, './file.crt'), 'utf8');  
+// var privateKey  = fs.readFileSync(path.join(__dirname, './private.pem'), 'utf8');
+// var certificate = fs.readFileSync(path.join(__dirname, './file.crt'), 'utf8');
+var privateKey  = fs.readFileSync(path.join(__dirname, '../certificate/key.pem'), 'utf8');  
+var certificate = fs.readFileSync(path.join(__dirname, '../certificate/certificate.pem'), 'utf8');  
 var credentials = {key: privateKey, cert: certificate};  
   
 var httpServer = http.createServer(app);  
@@ -35,5 +37,5 @@ app.get('/ad.js', (req, res) => {
 })
 
 httpsServer.listen(SSLPORT, function() {  
-    console.log('HTTPS Server is running on: https://localhost:%s', SSLPORT);  
+    console.log('HTTPS Server is running on: https://ad.zk:%s', SSLPORT);  
 });  
