@@ -7,8 +7,12 @@ const http = require('http');
 
 // var privateKey  = fs.readFileSync(path.join(__dirname, './private.pem'), 'utf8');
 // var certificate = fs.readFileSync(path.join(__dirname, './file.crt'), 'utf8');
-var privateKey  = fs.readFileSync(path.join(__dirname, '../certificate/key.pem'), 'utf8');  
-var certificate = fs.readFileSync(path.join(__dirname, '../certificate/certificate.pem'), 'utf8');  
+//  safari ok
+// var privateKey  = fs.readFileSync(path.join(__dirname, '../certificate/key.pem'), 'utf8');
+// var certificate = fs.readFileSync(path.join(__dirname, '../certificate/certificate.pem'), 'utf8');
+
+var privateKey  = fs.readFileSync(path.join(__dirname, '../key.pem'), 'utf8');  
+var certificate = fs.readFileSync(path.join(__dirname, '../cert.pem'), 'utf8');  
 var credentials = {key: privateKey, cert: certificate};  
   
 var httpServer = http.createServer(app);  
